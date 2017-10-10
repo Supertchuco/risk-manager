@@ -110,5 +110,21 @@ angular.module('riskManagerApp').controller('ClientController',
             self.client={};
             $scope.myForm.$setPristine();
         }
+
+        function getAllRisks(){
+
+    		    $http({method: 'GET', url: 'http://localhost:8080/riskManager/api/risk/'}).
+		        success(function(data, status, headers, config) {
+		        	$scope.risks = data;
+		        }).
+		        error(function(data, status, headers, config) {
+		          // called asynchronously if an error occurs
+		          // or server returns response with an error status.
+		        });
+		    }
+
+
+
+
     }
     ]);

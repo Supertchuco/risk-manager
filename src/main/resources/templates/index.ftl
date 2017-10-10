@@ -16,5 +16,7 @@
         <script src="js/app/app.js"></script>
         <script src="js/app/ClientService.js"></script>
         <script src="js/app/ClientController.js"></script>
+        <script src="js/app/RiskService.js"></script>
+        <script src="js/app/RiskController.js"></script>
     </body>
 </html>

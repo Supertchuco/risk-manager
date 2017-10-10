@@ -2,7 +2,8 @@ var app = angular.module('riskManagerApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
     BASE: 'http://localhost:8080/riskManager',
-    CLIENT_SERVICE_API : 'http://localhost:8080/riskManager/api/client/'
+    CLIENT_SERVICE_API : 'http://localhost:8080/riskManager/api/client/',
+    RISK_SERVICE_API : 'http://localhost:8080/riskManager/api/risk/'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',
@@ -25,3 +26,4 @@ app.config(['$stateProvider', '$urlRouterProvider',
             });
         $urlRouterProvider.otherwise('/');
     }]);
+

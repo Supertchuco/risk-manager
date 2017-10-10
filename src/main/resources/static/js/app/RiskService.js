@@ -12,39 +12,39 @@ angular.module('riskManagerApp').factory('RiskService',
 
             return factory;
 
-            function loadAllClients() {
-                console.log('Fetching all Clients');
+            function loadAllRisks() {
+                console.log('Fetching all Risks');
                 var deferred = $q.defer();
-                $http.get(urls.CLIENT_SERVICE_API)
+                $http.get(urls.RISK_SERVICE_API)
                     .then(
                         function (response) {
-                            console.log('Fetched successfully all Clients');
-                            $localStorage.clients = response.data;
+                            console.log('Fetched successfully all Risks');
+                            $localStorage.risks = response.data;
                             deferred.resolve(response);
                         },
                         function (errResponse) {
-                            console.error('Error while loading Clients');
+                            console.error('Error while loading Risks');
                             deferred.reject(errResponse);
                         }
                     );
                 return deferred.promise;
             }
 
-            function getAllClients(){
-                return $localStorage.clients;
+            function getAllRisks(){
+                return $localStorage.risks;
             }
 
-            function getClient(id) {
-                console.log('Fetching Client with id :'+id);
+            function getRisk(id) {
+                console.log('Fetching Risk with id :'+id);
                 var deferred = $q.defer();
-                $http.get(urls.CLIENT_SERVICE_API + id)
+                $http.get(urls.RISK_SERVICE_API + id)
                     .then(
                         function (response) {
-                            console.log('Fetched successfully Client with id :'+id);
+                            console.log('Fetched successfully Risk with id :'+id);
                             deferred.resolve(response.data);
                         },
                         function (errResponse) {
-                            console.error('Error while loading Client with id :'+id);
+                            console.error('Error while loading Risk with id :'+id);
                             deferred.reject(errResponse);
                         }
                     );

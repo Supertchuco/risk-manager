@@ -36,6 +36,15 @@
                         </div>
                     </div>
 
+
+                    <div data-ng-init="ClientController.getAllRisks()">
+                        <b>Risk:</b> <select id="risk">
+                            <option value="">-- Select Risks --</option>
+                            <option data-ng-repeat="risk in risks" value="{{risk.riskName}}">{{risk.riskName}}</option>
+                        </select><br>
+                    </div>
+
+
                     <div class="row">
                         <div class="form-actions floatRight">
                             <input type="submit"  value="{{!ctrl.client.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
