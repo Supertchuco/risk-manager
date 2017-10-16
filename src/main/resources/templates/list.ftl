@@ -26,24 +26,14 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <label class="col-md-2 control-lable" for="creditLimit">Risk</label>
-                            <div class="col-md-7">
-                                <select ng-model="selectedRisk" ng-options="risk.riskName for risk in risks">
-                           </select>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div data-ng-init="ClientController.getAllRisks()">
-                        <b>Risk:</b> <select id="risk">
-                            <option value="">-- Select Risks --</option>
-                            <option data-ng-repeat="risk in risks" value="{{risk.riskName}}">{{risk.riskName}}</option>
-                        </select><br>
-                    </div>
-
+                    <div ng-controller="RiskController">
+                         <label class="col-md-2 control-lable" for="risk">Risk</label>
+                         <div class="dropdown">
+                            <select ng-options="option for option in listOfRisks"
+                                    ng-model="ctrl.client.risk"
+                            </select>
+                         </div>
+                     </div>
 
                     <div class="row">
                         <div class="form-actions floatRight">

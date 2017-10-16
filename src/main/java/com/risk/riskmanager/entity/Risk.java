@@ -26,5 +26,12 @@ public class Risk {
         this.taxRisk = taxRisk;
     }
 
+
+    public Risk(Long id, String riskName, double taxRisk){
+        this.id = id;
+        this.riskName = riskName;
+        this.taxRisk = taxRisk;
+    }
+
     public Risk(){}
 }

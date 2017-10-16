@@ -3,25 +3,18 @@
 angular.module('riskManagerApp').controller('RiskController',
     ['RiskService', '$scope',  function( RiskService, $scope) {
 
-        var self = this;
-        self.risk = {};
-        self.risks=[];
-
-        self.submit = submit;
-        self.getAllClients = getAllRisks;
-        self.reset = reset;
-
-        self.successMessage = '';
-        self.errorMessage = '';
-        self.done = false;
-
-        self.onlyIntegers = /^\d+$/;
-        self.onlyNumbers = /^\d+([,.]\d+)?$/;
 
 
+         $scope.listOfRisks = loadAllRisks();
 
-        function getAllRisks(){
-            return RiskService.getAllRisks();
+        function loadAllRisks(){
+            var data = [];
+            var risks =  RiskService.loadAllRisks();
+            for(var i = 0; i < risks.length; i++){
+                  data.push(risks[i].riskName +" - "+ risks[i].taxRisk) + "%";
+            }
+
+            return data;
         }
 
         function reset(){

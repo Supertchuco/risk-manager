@@ -21,9 +21,12 @@ public class DatabaseLoader implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        this.clientRepository.save(new Client("oldman", 99));
+
         this.riskRepository.save(new Risk("a", 5));
         this.riskRepository.save(new Risk("b", 10));
         this.riskRepository.save(new Risk("c", 20));
+
+        this.clientRepository.save(new Client("otto", 11));
+
     }
 }

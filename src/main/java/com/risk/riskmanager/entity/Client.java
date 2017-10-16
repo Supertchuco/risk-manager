@@ -21,11 +21,16 @@ public class Client {
     @Column(name = "CREDIT_LIMIT", nullable = false)
     private double creditLimit;
 
-//    @ManyToOne
-//    @JoinColumns({
-//            @JoinColumn(name="riskName", referencedColumnName="riskName")
-//    })
-  //  private Risk risk;
+//    @OneToOne
+//    @JoinTable(name="ClientRisk",
+//            joinColumns=@JoinColumn(name="RISK_NAME"))
+//    private Risk risk;
+/*
+    public Client(String name, double creditLimit, Risk risk){
+        this.name = name;
+        this.creditLimit = creditLimit;
+        this.risk = risk;
+    }*/
 
     public Client(String name, double creditLimit){
         this.name = name;
